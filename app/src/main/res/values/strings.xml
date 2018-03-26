@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Sociall</string>
+    <string name="title_activity_news_feed">News Feed</string>
+    <string name="action_menu">Menu</string>
+    <string name="title_activity_navigation">Navigation</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_friends_list">FriendsList</string>
+
+    <!-- app id's and keys-->
+    <string name="facebook_app_id">1648604588689805</string>
+    <string name ="twitter_key">PeiCfkRBFSz2unZoXIBSC7rbj</string>
+    <string name ="twitter_secret">ZWITntGLhqEIiFugB6FDltJVzHGnpEeaCrmiBoWOUnyQ1sEkUc</string>
+    <string name ="instagram_id">b72d3d0800da467896341791ae5ebf27</string>
+    <string name ="instagram_secret">e92a9ea459264452af83566cb6d64418</string>
+    <string name = "instagram_callback">sociall2://callback</string>
+
+    <!-- navigation drawer items-->
+    <string-array name="nav_drawer_items">
+        <item>News Feed</item>
+        <item>Profile</item>
+        <item>Notifications</item>
+        <item>Messages</item>
+        <item>Friends</item>
+        <item>Options</item>
+    </string-array>
+    <array name="nav_drawer_icons">
+        <item>@drawable/ic_home_white_36dp</item>
+        <item>@drawable/ic_account_circle_white_36dp</item>
+        <item>@drawable/ic_speaker_notes_white_36dp</item>
+        <item>@drawable/ic_question_answer_white_36dp</item>
+        <item>@drawable/ic_supervisor_account_white_36dp</item>
+        <item>@drawable/ic_settings_white_36dp</item>
+    </array>
+    <string name="title_activity_k">k</string>
+    <string name="title_activity_send_message">SendMessage</string>
+</resources>

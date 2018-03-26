@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00A876</color>
+    <color name="colorPrimaryDark">#006D4C</color>
+    <color name="colorAccent">#207E62</color>
+    <color name="titleColor">#ffffff</color>
+    <color name="textColor">#000000</color>
+    <color name="lightGrey">#e1e1d1</color>
+    <color name ="darkGrey">#999966</color>
+    <color name="twitter">#0099e5</color>
+    <color name="instagram">#675144</color>
+    <color name="googleLogOut">#607D8B</color>
+</resources>

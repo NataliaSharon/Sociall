@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- The main content view -->
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/lightGrey">
+
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <!-- action/tool bar -->
+            <android.support.design.widget.AppBarLayout android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:theme="@style/AppTheme.AppBarOverlay"/>
+
+            <android.support.v7.widget.Toolbar android:id="@+id/toolbar"
+                android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary" app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+           <!-- search bar -->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:layout_marginTop="9dp"
+                    android:layout_marginLeft="9dp"
+                    android:layout_width="250dp"
+                    android:id="@+id/enterSearch"
+                    android:layout_height="wrap_content"
+                    android:autoText="false"
+                    android:editable="true"
+                    android:hint="Search for a friend"
+                    android:textColorHint="@color/darkGrey"/>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="11dp"
+                    android:src="@drawable/ic_search_white_36dp"/>
+            </LinearLayout>
+
+            <!-- friends list items -->
+            <ListView
+               android:id="@+id/friendsList"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:textColor="#000000">
+           </ListView>
+
+            <!-- error message -->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/errorImage"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="100dp"
+                android:src="@drawable/ic_report_problem_white_48dp"
+                android:visibility="gone"/>
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/errorText"
+                android:textColor="@color/colorAccent"
+                android:textAlignment="center"
+                android:text="Please log into a social network or check your internet connection :)"
+                android:layout_gravity="center_horizontal"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- The navigation drawer -->
+    <ListView android:id="@+id/left_drawer"
+        android:layout_width="260dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:background="@color/colorAccent"/>
+
+</android.support.v4.widget.DrawerLayout>

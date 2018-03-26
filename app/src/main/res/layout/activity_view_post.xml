@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- The main content view -->
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/lightGrey">
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <!-- action/tool bar -->
+            <android.support.design.widget.AppBarLayout android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:theme="@style/AppTheme.AppBarOverlay"/>
+
+            <android.support.v7.widget.Toolbar android:id="@+id/toolbar"
+                android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary" />
+
+            <!-- the post the user selected -->
+            <ListView
+                android:id="@+id/post"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000">
+            </ListView>
+
+            <!-- the list view of the comments -->
+            <ListView
+                android:id="@+id/comments"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:layout_below="@+id/post"
+                android:textColor="#000000">
+            </ListView>
+
+            <!-- list view of likes -->
+            <ListView
+                android:id="@+id/likesList"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_below="@+id/post"
+                android:textColor="#000000"
+                android:visibility="gone">
+            </ListView>
+
+            <!-- back button and like button, hidden at first -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+                android:gravity="bottom">
+
+                <Button
+                    android:layout_width="82dp"
+                    android:layout_height="35dp"
+                    android:id="@+id/like"
+                    android:text="Like"
+                    android:textAlignment="center"
+                    android:background="@drawable/selector"
+                    android:onClick="sendLike"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:visibility="gone"
+                    android:textColor="@color/lightGrey"/>
+
+                <Button
+                    android:layout_width="82dp"
+                    android:layout_height="35dp"
+                    android:id="@+id/retweet"
+                    android:text="Retweet"
+                    android:textAlignment="center"
+                    android:background="@drawable/selector"
+                    android:onClick="sendRetweet"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:visibility="gone"
+                    android:layout_gravity="bottom"
+                    android:textColor="@color/lightGrey"/>
+
+                <Button
+                    android:layout_width="82dp"
+                    android:layout_height="35dp"
+                    android:id="@+id/back"
+                    android:text="Go Back"
+                    android:textAlignment="center"
+                    android:background="@drawable/selector"
+                    android:onClick="goBack"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="9dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:visibility="gone"
+                    android:layout_gravity="bottom"
+                    android:textColor="@color/lightGrey"/>
+
+            </LinearLayout>
+
+            <!-- edit Text for user to add comment -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/userText"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginLeft="9dp"
+                    android:layout_width="240dp"
+                    android:layout_height="50dp"
+                    android:autoText="false"
+                    android:editable="true"
+                    android:hint="Comment/Reply"
+                    android:textColorHint="@color/darkGrey"/>
+
+                <Button
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:id="@+id/commentButton"
+                    android:text="Send"
+                    android:background="@drawable/selector"
+                    android:textColor="@color/lightGrey"
+                    android:onClick="postComment"
+                    android:layout_gravity="bottom"
+                    android:layout_toEndOf="@+id/userText"
+                    android:layout_marginRight="9dp"
+                    android:layout_marginTop="7dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- The navigation drawer -->
+    <ListView android:id="@+id/left_drawer"
+        android:layout_width="260dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:background="@color/colorAccent"/>
+
+</android.support.v4.widget.DrawerLayout>

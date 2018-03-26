@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- The main content view -->
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/lightGrey">
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <!-- action/tool bar -->
+            <android.support.design.widget.AppBarLayout android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:theme="@style/AppTheme.AppBarOverlay"/>
+
+            <android.support.v7.widget.Toolbar android:id="@+id/toolbar"
+                android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary" app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+            <fragment
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:name="com.example.user.sociall2.LogInFbFragment"
+                android:id="@+id/fbfragment"
+                android:layout_gravity="center_horizontal"
+                tools:layout="@layout/activity_log_in_fb_fragment" />
+
+            <!--- twitter log in -->
+            <fragment
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:name="com.example.user.sociall2.LogInTwitterFragment"
+                android:id="@+id/twitterFragment"
+                android:layout_gravity="center_horizontal"
+                android:visibility="gone"
+                tools:layout="@layout/activity_log_in_twitter_fragment" />
+
+            <!--- twitter log out -->
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="45dp"
+                android:textColor="@color/tw__solid_white"
+                android:textStyle="bold"
+                android:background="@color/twitter"
+                android:id="@+id/twitterLogOut"
+                android:onClick="TwitterLogOut"
+                android:text="Log out of Twitter"
+                android:layout_gravity="center_horizontal" />
+
+            <!--- instagram log out -->
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="45dp"
+                android:textColor="@color/tw__solid_white"
+                android:textStyle="bold"
+                android:background="@color/instagram"
+                android:id="@+id/instagramLogOut"
+                android:onClick="InstagramLogOut"
+                android:text="Log out of Instagram"
+                android:layout_gravity="center_horizontal"
+                android:layout_below="@id/twitterLogOut"
+                android:layout_marginTop="25dp"/>
+
+            <!-- instagram log in -->
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="45dp"
+                android:id="@+id/instagramLogIn"
+                android:background="@color/instagram"
+                android:textColor="@color/tw__solid_white"
+                android:text="Log in with Instagram"
+                android:textStyle="bold"
+                android:onClick="InstagramLogIn"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- The navigation drawer -->
+    <ListView android:id="@+id/left_drawer"
+        android:layout_width="260dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:background="@color/colorAccent"/>
+
+</android.support.v4.widget.DrawerLayout>
